@@ -1,0 +1,40 @@
+{
+  "name": "publiekepartner",
+  "description": "Publieke Partner monorepo",
+  "version": "0.0.1",
+  "author": "Matthijs van Boven",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatthijsvBoven/publieke-partner.git"
+  },
+  "workspaces": [
+    "packages/*",
+    "libraries/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@types/bun": "^1.1.3",
+    "eslint": "^9.3.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-unicorn": "^53.0.0",
+    "husky": "^9.0.11",
+    "npm-package-json-lint": "^7.1.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "eslint-check": "eslint --quiet .",
+    "eslint-fix": "eslint --fix .",
+    "package-json-check": "npmPkgJsonLint .",
+    "prettier-check": "prettier --check .",
+    "prettier-fix": "prettier --write ."
+  }
+}

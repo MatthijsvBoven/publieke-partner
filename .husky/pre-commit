@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+bun run package-json-check && bun run eslint-check && bun run prettier-check

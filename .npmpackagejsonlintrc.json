@@ -1,0 +1,36 @@
+{
+  "rules": {
+    "require-name": "error",
+    "require-description": "error",
+    "require-version": "error",
+    "require-author": "error",
+    "require-license": "error",
+    "require-private": "error",
+    "require-repository": "error",
+    "require-scripts": "error",
+    "prefer-alphabetical-dependencies": "error",
+    "prefer-alphabetical-devDependencies": "error",
+    "prefer-alphabetical-peerDependencies": "error",
+    "prefer-alphabetical-optionalDependencies": "error",
+    "prefer-alphabetical-scripts": "error",
+    "prefer-property-order": [
+      "error",
+      [
+        "name",
+        "description",
+        "version",
+        "author",
+        "license",
+        "private",
+        "repository",
+        "eslintConfig",
+        "prettier",
+        "dependencies",
+        "devDependencies",
+        "peerDependencies",
+        "optionalDependencies",
+        "scripts"
+      ]
+    ]
+  }
+}

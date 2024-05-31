@@ -1,0 +1,22 @@
+{
+  "name": "@publiekepartner/components",
+  "description": "Reusable component library for Publieke Partner",
+  "version": "0.0.1",
+  "author": "Matthijs van Boven",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "./src/index.ts",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatthijsvBoven/publieke-partner.git"
+  },
+  "dependencies": {
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "scripts": {
+    "add-script-here": "do something"
+  }
+}

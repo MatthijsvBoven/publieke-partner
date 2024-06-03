@@ -43,12 +43,7 @@ export default [
       'react/jsx-no-useless-fragment': 'error',
       'importplugin/no-unresolved': [2, { ignore: ['^@theme', '^@site'] }],
       'importplugin/no-useless-path-segments': 'error',
-      'importplugin/no-restricted-paths': [
-        2,
-        {
-          zones: [{ target: './packages', from: './libraries' }],
-        },
-      ],
+      'importplugin/no-restricted-paths': 'error',
       'no-restricted-imports': 'error',
       'noonlytests/no-only-tests': 'error',
       'importplugin/no-duplicates': 'error',
@@ -59,5 +54,6 @@ export default [
         version: 'detect',
       },
     },
+    ignores: ['node_modules', 'libraries/components/lib'],
   },
 ]

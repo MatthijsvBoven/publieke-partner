@@ -1,4 +1,6 @@
 {
+  "header.menu.aria-label": "Open submenu",
+  "header.menu.my-account.label": "Account",
   "header.navigation.home": "Home",
   "header.navigation.assignments": "ZZP Opdrachten",
   "header.navigation.organisations": "Organisaties",

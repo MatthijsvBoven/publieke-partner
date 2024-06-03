@@ -1,5 +1,5 @@
 import { CssBaseline, ThemeProvider as MuiThemeProvider, StyledEngineProvider } from '@mui/material'
-import type { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 interface ThemeProviderProps {
   children: ReactNode

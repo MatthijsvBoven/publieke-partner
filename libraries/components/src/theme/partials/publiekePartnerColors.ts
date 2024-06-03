@@ -1,4 +1,4 @@
-export const colors = {
+export const publiekePartnerColors = {
   brand: {
     '50': '#FF003C',
     '100': '#EC0038',
@@ -50,7 +50,7 @@ export const colors = {
     '50': '#2E97F9',
   },
   warning: {
-    '50': '#FFF4E5',
+    '50': '',
   },
   error: {
     '50': '',

@@ -54,6 +54,6 @@ export default [
         version: 'detect',
       },
     },
-    ignores: ['node_modules', 'libraries/components/lib'],
+    ignores: ['node_modules', 'libraries/components/lib', 'packages/website/.next'],
   },
 ]

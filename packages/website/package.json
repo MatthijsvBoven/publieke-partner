@@ -5,7 +5,6 @@
   "author": "Matthijs van Boven",
   "license": "UNLICENSED",
   "private": true,
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/MatthijsvBoven/publieke-partner.git"
@@ -13,6 +12,7 @@
   "dependencies": {
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.19",
     "@next/bundle-analyzer": "^14.2.3",
     "@publiekepartner/components": "workspace:*",
@@ -20,7 +20,8 @@
     "next-seo": "^6.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-intl": "^6.6.8"
+    "react-intl": "^6.6.8",
+    "sharp": "^0.33.4"
   },
   "scripts": {
     "analyze": "ANALYZE=true next build",

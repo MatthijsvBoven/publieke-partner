@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext", "DOM"],
-    "target": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext", "es6", "esnext.intl", "es2017.intl", "es2018.intl"],
+    "target": "es6",
     "module": "ESNext",
     "declaration": true,
     "moduleDetection": "force",

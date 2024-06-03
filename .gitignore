@@ -1,5 +1,4 @@
-node_modules
-.idea
-libraries/components/lib
-packages/website/.env
-
+node_modules/
+.idea/
+lib/
+.next/

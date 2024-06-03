@@ -6,17 +6,48 @@
   "license": "UNLICENSED",
   "private": true,
   "main": "./src/index.ts",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/MatthijsvBoven/publieke-partner.git"
   },
   "dependencies": {
+    "@babel/cli": "^7.24.6",
+    "@babel/core": "^7.24.6",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.24.6",
+    "@babel/plugin-proposal-export-default-from": "^7.24.6",
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "@babel/plugin-proposal-function-sent": "^7.24.6",
+    "@babel/plugin-proposal-json-strings": "^7.18.6",
+    "@babel/plugin-proposal-numeric-separator": "^7.18.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.24.6",
+    "@babel/plugin-proposal-unicode-property-regex": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.24.6",
+    "@fontsource/open-sans": "^5.0.28",
+    "@mui/material": "^5.15.19",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
     "next": "^14.2.3",
+    "polished": "^4.3.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-intl": "^6.6.8",
+    "style-loader": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.6",
+    "@babel/preset-react": "^7.24.6",
+    "@babel/preset-typescript": "^7.24.6",
+    "webpack": "^5.91.0"
   },
   "scripts": {
-    "add-script-here": "do something"
+    "build": "tsc",
+    "eslint-check": "eslint --quiet .",
+    "eslint-fix": "eslint --fix .",
+    "prettier-check": "prettier --check .",
+    "prettier-fix": "prettier --write .",
+    "start": "tsc -w"
   }
 }

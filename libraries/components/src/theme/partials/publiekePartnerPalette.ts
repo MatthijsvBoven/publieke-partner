@@ -1,4 +1,5 @@
-import { alpha, PaletteOptions } from '@mui/material'
+import { alpha } from '@mui/material'
+import type { PaletteOptions } from '@mui/material'
 import { colors } from '../settings'
 
 interface PaletteKeys {

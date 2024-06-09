@@ -3,9 +3,10 @@ import MenuIcon from '@mui/icons-material/Menu'
 import type { HeaderMenuItemProps } from './HeaderMenuItem.tsx'
 import { useIntl } from 'react-intl'
 import { HeaderMenuItem } from './HeaderMenuItem.tsx'
+import type { MouseEvent } from 'react'
 
 type HeaderSubMenuProps = {
-  openSubMenu: (event) => void
+  openSubMenu: (event: MouseEvent<HTMLElement>) => void
   closeSubMenu: () => void
   menuItems: Array<HeaderMenuItemProps>
   anchorElNav: HTMLElement | null
@@ -14,7 +15,7 @@ export const HeaderSubMenu = ({ openSubMenu, closeSubMenu, menuItems, anchorElNa
   const { formatMessage } = useIntl()
 
   return (
-    <Box sx={{ display: { xs: 'inline-flex', md: 'inline-flex', lg: 'none' } }}>
+    <Box sx={{ display: 'inline-flex' }}>
       <IconButton
         size="large"
         aria-label={formatMessage({ id: 'header.menu.aria-label' })}
@@ -40,7 +41,7 @@ export const HeaderSubMenu = ({ openSubMenu, closeSubMenu, menuItems, anchorElNa
         open={!!anchorElNav}
         onClose={closeSubMenu}
         sx={{
-          display: { xs: 'block', md: 'block', lg: 'none' },
+          display: 'block',
         }}
       >
         {menuItems.map((menuItem, index) => (

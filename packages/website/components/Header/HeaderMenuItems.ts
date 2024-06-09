@@ -1,4 +1,4 @@
-import { HeaderMenuItemProps } from '@publiekepartner/components'
+import type { HeaderMenuItemProps } from '@publiekepartner/components'
 
 export const headerMenuItems: HeaderMenuItemProps[] = [
   {

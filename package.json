@@ -5,7 +5,6 @@
   "author": "Matthijs van Boven",
   "license": "UNLICENSED",
   "private": true,
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/MatthijsvBoven/publieke-partner.git"

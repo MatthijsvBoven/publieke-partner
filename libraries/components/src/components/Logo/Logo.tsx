@@ -2,23 +2,29 @@ import type { StaticImageData } from 'next/image'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { StaticRequire } from 'next/dist/shared/lib/get-img-props'
+import { Tooltip, useMediaQuery, useTheme } from '@mui/material'
 
 type LogoProps = {
   image: string | StaticRequire | StaticImageData
-  width?: number
-  height?: number
   alt?: string
   href?: string
+  hoverText?: string
 }
 
 export const Logo = ({
   image,
-  width = 500,
-  height = 100,
   href = '/',
   alt = 'ZZP opdrachten - de Publieke Partner Logo',
-}: LogoProps) => (
-  <Link href={href}>
-    <Image src={image} alt={alt} width={width} height={height} priority />
-  </Link>
-)
+  hoverText = 'Publieke Partner Logo',
+}: LogoProps) => {
+  const theme = useTheme()
+  const isSmallUp = useMediaQuery(theme.breakpoints.down('sm'))
+
+  return (
+    <Link href={href}>
+      <Tooltip title={hoverText}>
+        <Image src={image} alt={alt} width={isSmallUp ? 230 : 400} height={isSmallUp ? 60 : 90} priority />
+      </Tooltip>
+    </Link>
+  )
+}

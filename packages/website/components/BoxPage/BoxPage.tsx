@@ -9,7 +9,7 @@ interface BoxPageProps extends PropsWithChildren {
 }
 
 export const BoxPage = ({ title, seo, children }: BoxPageProps) => (
-  <Box sx={{ p: { xs: '16px', sm: '32px 28px', md: '24px 28px', lg: '32px' } }}>
+  <Box sx={{ p: { xs: '16px', sm: '32px 28px', md: '24px 28px', lg: '32px' }, height: '100vh', bgcolor: 'lightgrey' }}>
     <NextSeo {...seo} />
     <Typography
       component="h1"

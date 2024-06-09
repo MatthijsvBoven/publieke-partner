@@ -41,7 +41,9 @@ export default [
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/jsx-no-useless-fragment': 'error',
-      'importplugin/no-unresolved': [2, { ignore: ['^@theme', '^@site'] }],
+      'importplugin/no-unresolved': 'error',
+      'importplugin/no-unassigned-import': 'error',
+      'importplugin/no-unused-modules': 'error',
       'importplugin/no-useless-path-segments': 'error',
       'importplugin/no-restricted-paths': 'error',
       'no-restricted-imports': 'error',
@@ -54,6 +56,6 @@ export default [
         version: 'detect',
       },
     },
-    ignores: ['node_modules', 'libraries/components/lib', 'packages/website/.next'],
+    ignores: ['node_modules', 'libraries/components/lib/**', 'packages/website/.next/**'],
   },
 ]

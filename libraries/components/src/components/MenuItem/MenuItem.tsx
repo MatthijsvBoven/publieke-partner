@@ -22,11 +22,15 @@ export const MenuItem = ({ href, intlDescriptor, selected, index }: MenuItemProp
   const { formatMessage } = useIntl()
 
   return href ? (
-    <Button sx={{ color: selected ? 'blue' : 'black', ...buttonStyles }} href={href} key={index}>
+    <Button
+      sx={{ color: selected ? 'blue' : 'black', ...buttonStyles }}
+      href={href}
+      data-testid={`MenuItemWithHref${index}`}
+    >
       {formatMessage({ id: intlDescriptor })}
     </Button>
   ) : (
-    <Typography sx={{ pt: 1, fontSize: '15px' }} key={index}>
+    <Typography sx={{ pt: 1, fontSize: '15px' }} data-testid={`MenuItemWithoutHref${index}`}>
       {formatMessage({ id: intlDescriptor })}
     </Typography>
   )

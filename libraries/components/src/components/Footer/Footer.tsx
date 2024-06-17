@@ -25,8 +25,10 @@ export const Footer = ({ menuItems, legalMenuItems, footerSocials }: FooterProps
         sx={{ ml: 'auto', mr: 'auto', alignItems: 'center' }}
         justifyContent="center"
       >
-        {menuItems.map((menuItem) => (
-          <MenuItem {...menuItem} />
+        {menuItems.map((menuItem, index) => (
+          <Box key={index}>
+            <MenuItem {...menuItem} index={index} />
+          </Box>
         ))}
         <FooterSocials {...footerSocials} />
       </Stack>

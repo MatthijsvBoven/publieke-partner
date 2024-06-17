@@ -1,6 +1,6 @@
-import type { HeaderMenuItemProps } from '@publiekepartner/components'
+import type { MenuItemProps } from '@publiekepartner/components'
 
-export const headerMenuItems: HeaderMenuItemProps[] = [
+export const menuLinks: Array<MenuItemProps> = [
   {
     href: '/',
     intlDescriptor: 'header.navigation.home',

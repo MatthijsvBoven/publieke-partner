@@ -1,14 +1,14 @@
-import { Box, IconButton, Menu, MenuItem } from '@mui/material'
+import { Box, IconButton, Menu, MenuItem as MuiMenuItem } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import type { HeaderMenuItemProps } from './HeaderMenuItem.tsx'
+import type { MenuItemProps } from '../MenuItem/MenuItem.tsx'
 import { useIntl } from 'react-intl'
-import { HeaderMenuItem } from './HeaderMenuItem.tsx'
+import { MenuItem } from '../MenuItem/MenuItem.tsx'
 import type { MouseEvent } from 'react'
 
 type HeaderSubMenuProps = {
   openSubMenu: (event: MouseEvent<HTMLElement>) => void
   closeSubMenu: () => void
-  menuItems: Array<HeaderMenuItemProps>
+  menuItems: Array<MenuItemProps>
   anchorElNav: HTMLElement | null
 }
 export const HeaderSubMenu = ({ openSubMenu, closeSubMenu, menuItems, anchorElNav }: HeaderSubMenuProps) => {
@@ -45,9 +45,9 @@ export const HeaderSubMenu = ({ openSubMenu, closeSubMenu, menuItems, anchorElNa
         }}
       >
         {menuItems.map((menuItem, index) => (
-          <MenuItem key={index} onClick={closeSubMenu}>
-            <HeaderMenuItem {...menuItem} key={index} />
-          </MenuItem>
+          <MuiMenuItem key={index} onClick={closeSubMenu}>
+            <MenuItem {...menuItem} />
+          </MuiMenuItem>
         ))}
       </Menu>
     </Box>

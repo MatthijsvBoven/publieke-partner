@@ -1,3 +1,5 @@
 export { Header } from './components/Header/Header.tsx'
-export type { HeaderMenuItemProps } from './components/Header/HeaderMenuItem.tsx'
+export type { MenuItemProps } from './components/MenuItem/MenuItem.tsx'
+export { Footer } from './components/Footer/Footer.tsx'
+export type { FooterSocialsProps } from './components/Footer/FooterSocials'
 export * from './theme'

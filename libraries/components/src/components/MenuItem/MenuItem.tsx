@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import { useIntl } from 'react-intl'
 
 const buttonStyles = {
@@ -11,19 +11,23 @@ const buttonStyles = {
   },
 }
 
-export type HeaderMenuItemProps = {
-  href: string
+export type MenuItemProps = {
+  href?: string
   intlDescriptor: string
   selected: boolean
   index?: number
 }
 
-export const HeaderMenuItem = ({ href, intlDescriptor, selected, index }: HeaderMenuItemProps) => {
+export const MenuItem = ({ href, intlDescriptor, selected, index }: MenuItemProps) => {
   const { formatMessage } = useIntl()
 
-  return (
+  return href ? (
     <Button sx={{ color: selected ? 'blue' : 'black', ...buttonStyles }} href={href} key={index}>
       {formatMessage({ id: intlDescriptor })}
     </Button>
+  ) : (
+    <Typography sx={{ pt: 1, fontSize: '15px' }} key={index}>
+      {formatMessage({ id: intlDescriptor })}
+    </Typography>
   )
 }

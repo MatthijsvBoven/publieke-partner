@@ -1,4 +1,8 @@
 {
+  "footer.legal.copyright": "Copyright © 2024 de Publieke Partner",
+  "footer.legal.powered-by": "Powered by de Publieke Partner",
+  "footer.legal.privacy-policy": "Privacy Beleid",
+  "footer.legal.terms-and-conditions": "Algemene voorwaarden",
   "header.menu.aria-label": "Open submenu",
   "header.menu.my-account.label": "Account",
   "header.navigation.home": "Home",

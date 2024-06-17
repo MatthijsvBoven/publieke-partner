@@ -1,5 +1,5 @@
 import { colors } from '../settings'
-import { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants } from '@mui/material'
+import type { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants } from '@mui/material'
 import { rem } from 'polished'
 
 interface MuiLink {

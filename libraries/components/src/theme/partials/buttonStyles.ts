@@ -1,7 +1,7 @@
 import { app, colors } from '../settings'
-import { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants } from '@mui/material'
+import type { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants } from '@mui/material'
 import { rem } from 'polished'
-import { CSSObject } from '@mui/system'
+import type { CSSObject } from '@mui/system'
 
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {

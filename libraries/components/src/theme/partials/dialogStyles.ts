@@ -1,4 +1,4 @@
-import { ComponentsOverrides, ComponentsProps, ComponentsVariants, Theme } from '@mui/material'
+import type { ComponentsOverrides, ComponentsProps, ComponentsVariants, Theme } from '@mui/material'
 import { app, colors } from '../settings'
 import { rem } from 'polished'
 

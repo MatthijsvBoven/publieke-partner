@@ -1,20 +1,21 @@
-import { Box, IconButton, Menu, MenuItem } from '@mui/material'
+import { Box, IconButton, Menu, MenuItem as MuiMenuItem } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import type { HeaderMenuItemProps } from './HeaderMenuItem.tsx'
+import type { MenuItemProps } from '../MenuItem/MenuItem.tsx'
 import { useIntl } from 'react-intl'
-import { HeaderMenuItem } from './HeaderMenuItem.tsx'
+import { MenuItem } from '../MenuItem/MenuItem.tsx'
+import type { MouseEvent } from 'react'
 
 type HeaderSubMenuProps = {
-  openSubMenu: (event) => void
+  openSubMenu: (event: MouseEvent<HTMLElement>) => void
   closeSubMenu: () => void
-  menuItems: Array<HeaderMenuItemProps>
+  menuItems: Array<MenuItemProps>
   anchorElNav: HTMLElement | null
 }
 export const HeaderSubMenu = ({ openSubMenu, closeSubMenu, menuItems, anchorElNav }: HeaderSubMenuProps) => {
   const { formatMessage } = useIntl()
 
   return (
-    <Box sx={{ display: { xs: 'inline-flex', md: 'inline-flex', lg: 'none' } }}>
+    <Box sx={{ display: 'inline-flex' }}>
       <IconButton
         size="large"
         aria-label={formatMessage({ id: 'header.menu.aria-label' })}
@@ -40,13 +41,13 @@ export const HeaderSubMenu = ({ openSubMenu, closeSubMenu, menuItems, anchorElNa
         open={!!anchorElNav}
         onClose={closeSubMenu}
         sx={{
-          display: { xs: 'block', md: 'block', lg: 'none' },
+          display: 'block',
         }}
       >
         {menuItems.map((menuItem, index) => (
-          <MenuItem key={index} onClick={closeSubMenu}>
-            <HeaderMenuItem {...menuItem} key={index} />
-          </MenuItem>
+          <MuiMenuItem key={index} onClick={closeSubMenu}>
+            <MenuItem {...menuItem} />
+          </MuiMenuItem>
         ))}
       </Menu>
     </Box>

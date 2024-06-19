@@ -16,6 +16,8 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@publiekepartner/components": "workspace:",
+    "@publiekepartner/website": "workspace:",
     "@types/bun": "^1.1.4",
     "eslint": "^9.5.0",
     "eslint-plugin-import": "^2.29.1",
@@ -30,10 +32,14 @@
     "typescript": "^5.4.5"
   },
   "scripts": {
+    "components-test": "bun run --filter @publiekepartner/components test",
     "eslint-check": "eslint --quiet .",
     "eslint-fix": "eslint --fix .",
     "package-json-check": "npmPkgJsonLint .",
     "prettier-check": "prettier --check .",
-    "prettier-fix": "prettier --write ."
+    "prettier-fix": "prettier --write .",
+    "website-build": "bun run --filter @publiekepartner/website build",
+    "website-start": "bun run --filter @publiekepartner/website start",
+    "website-start-prod": "bun run --filter @publiekepartner/website start-prod"
   }
 }

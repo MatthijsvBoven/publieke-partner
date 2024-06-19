@@ -27,8 +27,10 @@ export const FooterLegal = ({ menuItems }: FooterLegalProps) => {
             sx={{ ml: 'auto', mr: 'auto' }}
             justifyContent="center"
           >
-            {menuItems.map((menuItem) => (
-              <MenuItem {...menuItem} />
+            {menuItems.map((menuItem, index) => (
+              <Box key={index}>
+                <MenuItem {...menuItem} index={index} />
+              </Box>
             ))}
           </Stack>
         </Box>

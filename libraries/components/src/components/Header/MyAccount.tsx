@@ -22,9 +22,9 @@ export const MyAccount = ({ href = '/my-account', hoverText = 'Open account' }: 
   return (
     <Box sx={{ flexGrow: 0 }}>
       <Tooltip title={hoverText}>
-        <IconButton href={href} sx={sx}>
+        <IconButton href={href} sx={sx} data-testid={'MyAccountIcon'}>
           <PersonOutlined />
-          <Typography>{formatMessage({ id: 'header.menu.my-account.label' })}</Typography>
+          <Typography data-testid={'MyAccountText'}>{formatMessage({ id: 'header.menu.my-account.label' })}</Typography>
         </IconButton>
       </Tooltip>
     </Box>

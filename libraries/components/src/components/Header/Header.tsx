@@ -48,8 +48,8 @@ export const Header = ({ menuItems, image, myAccountHref }: HeaderProps) => {
             </Box>
             {isLargeUp && (
               <Box sx={{ ml: { md: -3 } }}>
-                {menuItems.map((menuItem) => (
-                  <MenuItem {...menuItem} />
+                {menuItems.map((menuItem, index) => (
+                  <MenuItem {...menuItem} index={index} />
                 ))}
               </Box>
             )}

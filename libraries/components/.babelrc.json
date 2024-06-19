@@ -7,11 +7,17 @@
         "targets": {
           "chrome": 100,
           "safari": 15,
-          "firefox": 91
+          "firefox": 91,
+          "node": "current"
         }
       }
     ],
-    "@babel/preset-react",
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ],
     "@babel/preset-typescript"
   ],
   "plugins": []

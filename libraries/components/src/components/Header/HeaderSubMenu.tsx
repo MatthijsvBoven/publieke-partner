@@ -46,7 +46,7 @@ export const HeaderSubMenu = ({ openSubMenu, closeSubMenu, menuItems, anchorElNa
       >
         {menuItems.map((menuItem, index) => (
           <MuiMenuItem key={index} onClick={closeSubMenu}>
-            <MenuItem {...menuItem} />
+            <MenuItem {...menuItem} index={index} />
           </MuiMenuItem>
         ))}
       </Menu>

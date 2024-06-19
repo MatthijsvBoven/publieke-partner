@@ -24,7 +24,13 @@ const footerSocialsStyles = {
 export const FooterSocials = ({ items }: FooterSocialsProps) => (
   <Box sx={footerSocialsStyles}>
     {items.map((item, index) => (
-      <Link href={item.url} target="_blank" rel="noopener noreferrer" key={index}>
+      <Link
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        key={index}
+        data-testid={`FooterSocialsLink${index}`}
+      >
         <IconButton
           aria-label={item.name}
           sx={{

@@ -29,7 +29,7 @@ export const FooterLegal = ({ menuItems }: FooterLegalProps) => {
           >
             {menuItems.map((menuItem, index) => (
               <Box key={index}>
-                <MenuItem {...menuItem} />
+                <MenuItem {...menuItem} index={index} />
               </Box>
             ))}
           </Stack>

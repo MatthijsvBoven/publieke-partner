@@ -21,9 +21,16 @@ export const Logo = ({
   const isSmallUp = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Link href={href}>
+    <Link href={href} data-testid="LogoLink">
       <Tooltip title={hoverText}>
-        <Image src={image} alt={alt} width={isSmallUp ? 230 : 400} height={isSmallUp ? 60 : 90} priority />
+        <Image
+          data-testid="Logo"
+          src={image}
+          alt={alt}
+          width={isSmallUp ? 230 : 400}
+          height={isSmallUp ? 60 : 90}
+          priority
+        />
       </Tooltip>
     </Link>
   )

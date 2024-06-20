@@ -11,3 +11,26 @@ jobs:
       - run: bun install
       - run: bun run --filter @publiekepartner/components test
       - run: bun run --filter @publiekepartner/website build
+  Sonar-Analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Start SonarQube and Postgres
+        run: docker-compose up -d
+      - name: Wait for SonarQube to be ready
+        run: |
+          echo "Waiting for SonarQube to start..."
+          until $(curl --output /dev/null --silent --head --fail http://localhost:9000); do
+            printf '.'
+            sleep 5
+          done
+      - uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      - uses: sonarsource/sonarqube-quality-gate-action@master
+        timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

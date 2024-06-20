@@ -1,4 +1,4 @@
-import { AppBar, Box, Toolbar, Container, useTheme, useMediaQuery } from '@mui/material'
+import { AppBar, Box, Toolbar, Container, useTheme, useMediaQuery, Divider } from '@mui/material'
 import { useState } from 'react'
 import type { MouseEvent } from 'react'
 import type { MenuItemProps } from '../MenuItem/MenuItem.tsx'
@@ -9,6 +9,7 @@ import { HideOnScroll } from './HideOnScroll.tsx'
 import { HeaderSubMenu } from './HeaderSubMenu.tsx'
 import { MenuItem } from '../MenuItem/MenuItem.tsx'
 import { MyAccount } from './MyAccount.tsx'
+import { Newsletter } from '../Newsletter/Newsletter'
 
 type HeaderProps = {
   menuItems: Array<MenuItemProps>
@@ -55,6 +56,8 @@ export const Header = ({ menuItems, image, myAccountHref }: HeaderProps) => {
             )}
             <MyAccount href={myAccountHref} />
           </Toolbar>
+          <Divider orientation="horizontal" sx={{ width: '100%' }} />
+          <Newsletter />
         </Container>
       </AppBar>
     </HideOnScroll>

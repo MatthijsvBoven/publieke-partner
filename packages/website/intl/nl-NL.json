@@ -13,5 +13,11 @@
   "header.navigation.contact": "Contact",
   "homepage.seo.description": "ZZP opdrachten bij de overheid, eenvoudig op één plek te vinden bij de publieke partner, weten welke opdracht bij jou past? Bezoek de website.",
   "homepage.seo.title": "ZZP Opdrachten",
-  "homepage.title": "Vind ZZP Opdrachten"
+  "homepage.title": "Vind ZZP Opdrachten",
+  "general.error.email": "Vul een geldig e-mailadres in",
+  "general.error.required": "Dit veld is verplicht",
+  "newsletter.modal.title": "Als eerste de nieuwste opdrachten ontvangen? Schrijf je in voor onze nieuwsbrief!",
+  "newsletter.placeholder": "e-mailadres",
+  "newsletter.submit-button": "Aanmelden nieuwsbrief",
+  "newsletter.title": "Ontvang dagelijks de nieuwste opdrachten"
 }

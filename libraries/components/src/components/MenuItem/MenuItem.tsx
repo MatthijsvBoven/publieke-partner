@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material'
+import { Button, ButtonProps, Typography } from '@mui/material'
 import { useIntl } from 'react-intl'
 
 const buttonStyles = {
@@ -11,14 +11,14 @@ const buttonStyles = {
   },
 }
 
-export type MenuItemProps = {
+export interface MenuItemProps extends ButtonProps {
   href?: string
   intlDescriptor: string
-  selected: boolean
+  selected?: boolean
   index?: number
 }
 
-export const MenuItem = ({ href, intlDescriptor, selected, index }: MenuItemProps) => {
+export const MenuItem = ({ href, intlDescriptor, selected = false, index }: MenuItemProps) => {
   const { formatMessage } = useIntl()
 
   return href ? (
@@ -26,11 +26,12 @@ export const MenuItem = ({ href, intlDescriptor, selected, index }: MenuItemProp
       sx={{ color: selected ? 'blue' : 'black', ...buttonStyles }}
       href={href}
       data-testid={`MenuItemWithHref${index}`}
+      key={index}
     >
       {formatMessage({ id: intlDescriptor })}
     </Button>
   ) : (
-    <Typography sx={{ pt: 1, fontSize: '15px' }} data-testid={`MenuItemWithoutHref${index}`}>
+    <Typography key={index} sx={{ pt: 1, fontSize: '15px' }} data-testid={`MenuItemWithoutHref${index}`}>
       {formatMessage({ id: intlDescriptor })}
     </Typography>
   )

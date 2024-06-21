@@ -7,7 +7,11 @@ import { NewsletterInput } from './NewsletterInput'
 
 export const Newsletter = () => {
   const { formatMessage } = useIntl()
-  const { isOpen: modalIsOpen, handleClose: modalHandleClose, handleOpen: modalHandleOpen } = useStateToggle()
+  const {
+    isOpen: newsletterModalIsOpen,
+    handleClose: newsletterModalHandleClose,
+    handleOpen: newsletterModalHandleOpen,
+  } = useStateToggle()
   const theme = useTheme()
   const isMobileDown = useMediaQuery(theme.breakpoints.down('sm'))
 
@@ -16,20 +20,24 @@ export const Newsletter = () => {
       <IconButton
         size="large"
         aria-label={formatMessage({ id: 'newsletter.submit-button' })}
-        aria-controls="menu-appbar"
+        aria-controls="modal-newsletter"
         aria-haspopup="true"
-        onClick={modalHandleOpen}
+        onClick={newsletterModalHandleOpen}
         color="inherit"
       >
-        <Mail color={'primary'} />
+        <Mail color="primary" />
       </IconButton>
-      <Modal open={modalIsOpen} title={formatMessage({ id: 'newsletter.modal.title' })} handleClose={modalHandleClose}>
+      <Modal
+        open={newsletterModalIsOpen}
+        title={formatMessage({ id: 'newsletter.modal.title' })}
+        handleClose={newsletterModalHandleClose}
+      >
         <NewsletterInput />
       </Modal>
     </Box>
   ) : (
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 4, mb: 1, mt: 1 }}>
-      <Typography variant={'h2'}>{formatMessage({ id: 'newsletter.title' })}</Typography>
+      <Typography variant="h2">{formatMessage({ id: 'newsletter.title' })}</Typography>
       <NewsletterInput />
     </Box>
   )

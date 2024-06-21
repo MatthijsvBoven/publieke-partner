@@ -30,9 +30,9 @@ export const colors = {
     darker: '#36a073',
   },
   primary: {
-    light: '#dd345d',
-    main: '#d40134',
-    dark: '#aa012a',
+    light: '#4dabf5',
+    main: '#2196f3',
+    dark: '#1a78c2',
   },
   secondary: {
     light: '#69d3a6',

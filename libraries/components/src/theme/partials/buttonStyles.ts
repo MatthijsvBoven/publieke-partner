@@ -92,17 +92,15 @@ const buttonStyles: MuiButton = {
       style: {
         textAlign: 'center',
         color: colors.common.white,
-        backgroundColor: colors.secondary.main,
-        borderColor: colors.secondary.main,
+        backgroundColor: colors.info.main,
+        borderColor: colors.info.main,
         verticalAlign: 'middle',
-        width: '100%',
         fontWeight: 700,
-        borderRadius: 0,
+        borderRadius: 5,
         '&:hover': {
-          backgroundColor: colors.secondary.dark,
-          borderColor: colors.secondary.dark,
+          backgroundColor: colors.info.dark,
+          borderColor: colors.info.dark,
         },
-        padding: '1rem 2rem',
         '&.Mui-disabled': {
           backgroundColor: '#A2E4C8',
           color: colors.common.white,

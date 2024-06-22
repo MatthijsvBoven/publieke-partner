@@ -1,4 +1,7 @@
 {
+  "filters.locations.all": "Alle regio's",
+  "filters.locations.modal.title": "Filter de opdrachten per provincie.",
+  "filters.locations.open-mobile-modal": "Filter op locatie",
   "footer.legal.copyright": "Copyright © 2024 de Publieke Partner",
   "footer.legal.powered-by": "Powered by de Publieke Partner",
   "footer.legal.privacy-policy": "Privacy Beleid",

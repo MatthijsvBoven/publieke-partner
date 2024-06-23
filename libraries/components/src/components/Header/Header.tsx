@@ -33,7 +33,7 @@ export const Header = ({ menuItems, image, myAccountHref }: HeaderProps) => {
 
   return (
     <HideOnScroll>
-      <AppBar position="sticky">
+      <AppBar sx={{ bgcolor: 'common.white' }} position="sticky">
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             {isLargeDown && (
@@ -48,7 +48,7 @@ export const Header = ({ menuItems, image, myAccountHref }: HeaderProps) => {
               <Logo image={image} />
             </Box>
             {isLargeUp && (
-              <Box sx={{ ml: { md: -3 } }}>
+              <Box sx={{ ml: { md: -3 }, display: 'flex', gap: 5 }}>
                 {menuItems.map((menuItem, index) => (
                   <MenuItem {...menuItem} index={index} key={index} />
                 ))}

@@ -36,7 +36,7 @@ export const Newsletter = () => {
       </Modal>
     </Box>
   ) : (
-    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 4, mb: 1, mt: 1 }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 6, mb: 1, mt: 1 }}>
       <Typography variant="h2">{formatMessage({ id: 'newsletter.title' })}</Typography>
       <NewsletterInput />
     </Box>

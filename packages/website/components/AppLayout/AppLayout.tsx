@@ -1,4 +1,4 @@
-import { Container } from '@mui/material'
+import { Box } from '@mui/material'
 import type { PropsWithChildren } from 'react'
 import { footerMenuItems } from '../../mockdata/FooterMenuItems'
 import { menuLinks } from '../../mockdata/MenuLinks'
@@ -16,10 +16,10 @@ export const AppLayout = ({ children }: PropsWithChildren) => {
   })
 
   return (
-    <Container>
+    <Box sx={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
       <Header menuItems={menuLinks} image={PubliekePartnerLogo as StaticImageData} />
-      {children}
+      <Box sx={{ flex: 1, bgcolor: 'lightgrey' }}>{children}</Box>
       <Footer legalMenuItems={footerMenuItems} menuItems={menuLinks} footerSocials={footerSocials} />
-    </Container>
+    </Box>
   )
 }

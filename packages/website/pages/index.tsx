@@ -1,9 +1,11 @@
 import { useIntl } from 'react-intl'
 import { BoxPage } from '../components/BoxPage/BoxPage.tsx'
-import { LocationsFilter } from '@publiekepartner/components'
+import { CategoriesFilter, LocationsFilter } from '@publiekepartner/components'
 import { Locations } from '../mockdata/Locations.ts'
 import { useState } from 'react'
 import { LocationButton } from '@publiekepartner/components'
+import { Categories } from '../mockdata/Categories.ts'
+import { Box } from '@mui/material'
 
 const Index = () => {
   const [FilteredLocations, setFilteredLocations] = useState<Array<string>>([])
@@ -39,7 +41,10 @@ const Index = () => {
       }}
       title={formatMessage({ id: 'homepage.title' })}
     >
-      <LocationsFilter locations={LocationsData} handleFilter={setFilters} />
+      <Box sx={{ display: 'flex', justifyContent: 'start', alignItems: 'start', gap: 4 }}>
+        <CategoriesFilter categories={Categories} />
+        <LocationsFilter locations={LocationsData} handleFilter={setFilters} />
+      </Box>
     </BoxPage>
   )
 }

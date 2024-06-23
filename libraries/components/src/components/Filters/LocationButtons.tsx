@@ -3,6 +3,7 @@ import { useIntl } from 'react-intl'
 import { useEffect, useState } from 'react'
 
 export type LocationButton = {
+  id: number
   name: string
   isFiltered?: boolean
 }
@@ -29,11 +30,11 @@ export const LocationButtons = ({ locations, handleFilter }: LocationButtonsType
       <Button sx={Sx} variant="contained" onClick={() => handleFilter()}>
         {formatMessage({ id: 'filters.locations.all' })}
       </Button>
-      {locations.map((location, index) => (
+      {locations.map((location) => (
         <Button
           sx={{ color: location.isFiltered ? 'white' : 'black', bgcolor: location.isFiltered ? 'primary' : 'white' }}
           variant="contained"
-          key={index}
+          key={location.id}
           onClick={() => handleFilter(location.name)}
         >
           {location.name}

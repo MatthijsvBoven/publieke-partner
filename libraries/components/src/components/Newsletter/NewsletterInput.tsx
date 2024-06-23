@@ -44,7 +44,7 @@ export const NewsletterInput = () => {
         }
         {...register('email', { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ })}
       />
-      <Button sx={{ width: '100%', height: '55px' }} variant={'actionButton'} onClick={handleSubmit(onSubmit)}>
+      <Button sx={{ width: '100%', height: '55px' }} variant="actionButton" onClick={handleSubmit(onSubmit)}>
         {formatMessage({ id: 'newsletter.submit-button' })}
       </Button>
     </FormControl>

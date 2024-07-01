@@ -18,18 +18,18 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@publiekepartner/components": "workspace:",
     "@publiekepartner/website": "workspace:",
-    "@types/bun": "^1.1.4",
-    "eslint": "^9.5.0",
+    "@types/bun": "^1.1.6",
+    "eslint": "^9.6.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-no-only-tests": "^3.1.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-react": "^7.34.2",
+    "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-unicorn": "^54.0.0",
     "husky": "^9.0.11",
     "npm-package-json-lint": "^8.0.0",
     "prettier": "^3.3.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.2"
   },
   "scripts": {
     "components-test": "bun run --filter @publiekepartner/components test",

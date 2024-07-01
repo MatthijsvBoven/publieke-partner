@@ -1,4 +1,4 @@
-import { Container } from '@mui/material'
+import { Box } from '@mui/material'
 import type { PropsWithChildren } from 'react'
 import { footerMenuItems } from '../../mockdata/FooterMenuItems'
 import { menuLinks } from '../../mockdata/MenuLinks'
@@ -8,6 +8,17 @@ import { Header, Footer } from '@publiekepartner/components'
 import PubliekePartnerLogo from '../../public/PubliekePartnerLogo.webp'
 import { StaticImageData } from 'next/image'
 
+const boxStyles = {
+  display: 'flex',
+  minHeight: '100vh',
+  flexDirection: 'column',
+}
+
+const innerBoxStyles = {
+  flex: 1,
+  bgcolor: 'lightgrey',
+}
+
 export const AppLayout = ({ children }: PropsWithChildren) => {
   const router = useRouter()
 
@@ -16,10 +27,10 @@ export const AppLayout = ({ children }: PropsWithChildren) => {
   })
 
   return (
-    <Container>
+    <Box sx={boxStyles}>
       <Header menuItems={menuLinks} image={PubliekePartnerLogo as StaticImageData} />
-      {children}
+      <Box sx={innerBoxStyles}>{children}</Box>
       <Footer legalMenuItems={footerMenuItems} menuItems={menuLinks} footerSocials={footerSocials} />
-    </Container>
+    </Box>
   )
 }

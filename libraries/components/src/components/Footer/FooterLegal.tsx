@@ -5,14 +5,28 @@ interface FooterLegalProps {
   menuItems: Array<MenuItemProps>
 }
 
+const boxStyles = {
+  display: 'flex',
+  alignItems: 'center',
+  minHeight: '100px',
+}
+
+const stackStyles = {
+  ml: 'auto',
+  mr: 'auto',
+  justifyContent: 'center',
+  flex: '2 0 0',
+  textAlign: 'center',
+}
+
 export const FooterLegal = ({ menuItems }: FooterLegalProps) => {
   const theme = useTheme()
   const isSmallUp = useMediaQuery(theme.breakpoints.up('sm'))
 
   return (
-    <Box sx={{ fontSize: '14px' }}>
+    <Box>
       <Container maxWidth="xl">
-        <Box display="flex" alignItems="center" minHeight="100px">
+        <Box sx={boxStyles}>
           <Stack
             direction={isSmallUp ? 'row' : 'column'}
             spacing={isSmallUp ? 2 : 0}
@@ -21,11 +35,7 @@ export const FooterLegal = ({ menuItems }: FooterLegalProps) => {
                 <Divider orientation="vertical" variant="middle" sx={{ borderColor: 'grayScale.main' }} flexItem />
               )
             }
-            textAlign="center"
-            flex="2 0 0"
-            fontSize={{ xs: '12px', sm: '14px' }}
-            sx={{ ml: 'auto', mr: 'auto' }}
-            justifyContent="center"
+            sx={stackStyles}
           >
             {menuItems.map((menuItem, index) => (
               <Box key={index}>

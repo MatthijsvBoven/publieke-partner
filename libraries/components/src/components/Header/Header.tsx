@@ -17,6 +17,20 @@ type HeaderProps = {
   myAccountHref?: string
 }
 
+const toolbarStyles = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+}
+
+const menuItemsBoxStyles = {
+  ml: { md: -3 },
+  display: 'flex',
+  gap: 5,
+}
+
+const boxStyles = { mt: 1, mb: 1, ml: { md: -6 } }
+
 export const Header = ({ menuItems, image, myAccountHref }: HeaderProps) => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
   const theme = useTheme()
@@ -33,9 +47,9 @@ export const Header = ({ menuItems, image, myAccountHref }: HeaderProps) => {
 
   return (
     <HideOnScroll>
-      <AppBar position="sticky">
+      <AppBar sx={{ bgcolor: 'common.white' }} position="sticky">
         <Container maxWidth="xl">
-          <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Toolbar disableGutters sx={toolbarStyles}>
             {isLargeDown && (
               <HeaderSubMenu
                 openSubMenu={handleOpenNavMenu}
@@ -44,11 +58,11 @@ export const Header = ({ menuItems, image, myAccountHref }: HeaderProps) => {
                 anchorElNav={anchorElNav}
               />
             )}
-            <Box sx={{ mt: 1, mb: 1, ml: { md: -6 } }}>
+            <Box sx={boxStyles}>
               <Logo image={image} />
             </Box>
             {isLargeUp && (
-              <Box sx={{ ml: { md: -3 } }}>
+              <Box sx={menuItemsBoxStyles}>
                 {menuItems.map((menuItem, index) => (
                   <MenuItem {...menuItem} index={index} key={index} />
                 ))}

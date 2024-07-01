@@ -9,22 +9,24 @@ interface FooterProps {
   footerSocials: FooterSocialsProps
 }
 
+const stackStyles = {
+  ml: 'auto',
+  mr: 'auto',
+  alignItems: 'center',
+  textAlign: 'center',
+  flex: '2 0 0',
+  fontSize: { xs: '12px', sm: '14px' },
+  justifyContent: 'center',
+}
+
 export const Footer = ({ menuItems, legalMenuItems, footerSocials }: FooterProps) => {
   const theme = useTheme()
   const isSmallUp = useMediaQuery(theme.breakpoints.up('sm'))
 
   return (
-    <Box sx={{ bgcolor: 'white' }}>
+    <Box bgcolor="white">
       <Divider orientation="horizontal" variant="middle" sx={{ borderColor: 'grayScale.main' }} />
-      <Stack
-        direction={isSmallUp ? 'row' : 'column'}
-        spacing={isSmallUp ? 2 : 0}
-        textAlign="center"
-        flex="2 0 0"
-        fontSize={{ xs: '12px', sm: '14px' }}
-        sx={{ ml: 'auto', mr: 'auto', alignItems: 'center' }}
-        justifyContent="center"
-      >
+      <Stack direction={isSmallUp ? 'row' : 'column'} spacing={isSmallUp ? 2 : 0} sx={stackStyles}>
         {menuItems.map((menuItem, index) => (
           <Box key={index}>
             <MenuItem {...menuItem} index={index} />

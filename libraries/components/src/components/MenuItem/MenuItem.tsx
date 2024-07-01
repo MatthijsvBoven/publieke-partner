@@ -3,12 +3,17 @@ import { useIntl } from 'react-intl'
 
 const buttonStyles = {
   textTransform: 'none',
-  fontSize: '15px',
+  fontSize: { xs: '15px', md: '18px', lg: '22px' },
   height: '100%',
   textDecoration: 'none',
   '&:hover': {
     color: 'blue',
   },
+}
+
+const typographyStyles = {
+  pt: 1,
+  fontSize: { xs: '15px', md: '18px', lg: '22px' },
 }
 
 export interface MenuItemProps extends ButtonProps {
@@ -31,7 +36,7 @@ export const MenuItem = ({ href, intlDescriptor, selected = false, index }: Menu
       {formatMessage({ id: intlDescriptor })}
     </Button>
   ) : (
-    <Typography key={index} sx={{ pt: 1, fontSize: '15px' }} data-testid={`MenuItemWithoutHref${index}`}>
+    <Typography key={index} sx={typographyStyles} data-testid={`MenuItemWithoutHref${index}`}>
       {formatMessage({ id: intlDescriptor })}
     </Typography>
   )

@@ -6,6 +6,19 @@ type Inputs = {
   email: string
 }
 
+const formControlStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: 3,
+}
+
+const textInputStyles = {
+  textAlign: 'center',
+  px: '5px',
+  width: '100%',
+}
+
 export const NewsletterInput = () => {
   const { formatMessage } = useIntl()
   const theme = useTheme()
@@ -19,21 +32,9 @@ export const NewsletterInput = () => {
   } = useForm<Inputs>()
 
   return (
-    <FormControl
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: isMobileDown ? 'column' : 'row',
-        gap: 3,
-      }}
-    >
+    <FormControl sx={{ flexDirection: isMobileDown ? 'column' : 'row', ...formControlStyles }}>
       <TextField
-        sx={{
-          textAlign: 'center',
-          px: '5px',
-          width: '100%',
-        }}
+        sx={textInputStyles}
         placeholder={formatMessage({ id: 'newsletter.placeholder' })}
         helperText={
           errors.email?.type === 'required'

@@ -11,7 +11,7 @@ import { DefaultSeo } from 'next-seo'
 import { AppLayout } from '../components/AppLayout/AppLayout.tsx'
 
 interface MyAppProps extends AppProps {
-  emotionCache?: EmotionCache
+  emotionCache: EmotionCache
 }
 
 const clientSideEmotionCache = createEmotionCache()

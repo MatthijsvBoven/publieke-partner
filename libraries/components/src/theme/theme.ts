@@ -278,6 +278,7 @@ export const theme = createTheme({
           ${base.typography.pxToRem(32)}
           )`,
           fontWeight: 700,
+          lineHeight: '38px',
         },
         h2: {
           fontSize: `clamp(

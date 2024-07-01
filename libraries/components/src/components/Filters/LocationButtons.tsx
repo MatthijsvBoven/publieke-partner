@@ -13,21 +13,29 @@ type LocationButtonsType = {
   handleFilter: (location?: string) => void
 }
 
+const boxStyles = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  gap: 2,
+  width: '100%',
+}
+
 export const LocationButtons = ({ locations, handleFilter }: LocationButtonsType) => {
   const { formatMessage } = useIntl()
-  const [Sx, setSx] = useState<SxProps>({})
+  const [buttonStyles, setButtonStyles] = useState<SxProps>({})
 
   useEffect(() => {
     const isFilterApplied = locations.find((location) => location.isFiltered)
-    setSx({
+    setButtonStyles({
       color: !!isFilterApplied ? 'black' : 'white',
       bgcolor: !!isFilterApplied ? 'white' : 'primary',
     })
   }, [locations])
 
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 2, width: '100%' }}>
-      <Button sx={Sx} variant="contained" onClick={() => handleFilter()}>
+    <Box sx={boxStyles}>
+      <Button sx={buttonStyles} variant="contained" onClick={() => handleFilter()}>
         {formatMessage({ id: 'filters.locations.all' })}
       </Button>
       {locations.map((location) => (

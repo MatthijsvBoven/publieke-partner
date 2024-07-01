@@ -11,6 +11,11 @@ const buttonStyles = {
   },
 }
 
+const typographyStyles = {
+  pt: 1,
+  fontSize: { xs: '15px', md: '18px', lg: '22px' },
+}
+
 export interface MenuItemProps extends ButtonProps {
   href?: string
   intlDescriptor: string
@@ -31,11 +36,7 @@ export const MenuItem = ({ href, intlDescriptor, selected = false, index }: Menu
       {formatMessage({ id: intlDescriptor })}
     </Button>
   ) : (
-    <Typography
-      key={index}
-      sx={{ pt: 1, fontSize: { xs: '15px', md: '18px', lg: '22px' } }}
-      data-testid={`MenuItemWithoutHref${index}`}
-    >
+    <Typography key={index} sx={typographyStyles} data-testid={`MenuItemWithoutHref${index}`}>
       {formatMessage({ id: intlDescriptor })}
     </Typography>
   )

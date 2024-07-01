@@ -5,6 +5,15 @@ import { Modal } from '../Modal/Modal'
 import { useStateToggle } from '../../utils/useStateToggle'
 import { NewsletterInput } from './NewsletterInput'
 
+const boxStyles = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: 6,
+  mb: 1,
+  mt: 1,
+}
+
 export const Newsletter = () => {
   const { formatMessage } = useIntl()
   const {
@@ -36,7 +45,7 @@ export const Newsletter = () => {
       </Modal>
     </Box>
   ) : (
-    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 6, mb: 1, mt: 1 }}>
+    <Box sx={boxStyles}>
       <Typography variant="h2">{formatMessage({ id: 'newsletter.title' })}</Typography>
       <NewsletterInput />
     </Box>

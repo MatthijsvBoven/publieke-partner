@@ -7,6 +7,13 @@ import { LocationButton } from '@publiekepartner/components'
 import { Categories } from '../mockdata/Categories.ts'
 import { Box } from '@mui/material'
 
+const boxStyles = {
+  display: 'flex',
+  justifyContent: 'start',
+  alignItems: 'start',
+  gap: 4,
+}
+
 const Index = () => {
   const [FilteredLocations, setFilteredLocations] = useState<Array<string>>([])
   const [LocationsData, setLocationsData] = useState<Array<LocationButton>>(Locations)
@@ -41,7 +48,7 @@ const Index = () => {
       }}
       title={formatMessage({ id: 'homepage.title' })}
     >
-      <Box sx={{ display: 'flex', justifyContent: 'start', alignItems: 'start', gap: 4 }}>
+      <Box sx={boxStyles}>
         <CategoriesFilter categories={Categories} />
         <LocationsFilter locations={LocationsData} handleFilter={setFilters} />
       </Box>

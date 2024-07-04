@@ -1,18 +1,12 @@
 import { useIntl } from 'react-intl'
 import { BoxPage } from '../components/BoxPage/BoxPage.tsx'
-import { CategoriesFilter, LocationsFilter } from '@publiekepartner/components'
+import { CategoriesFilter, JobCard, LocationsFilter } from '@publiekepartner/components'
 import { Locations } from '../mockdata/Locations.ts'
 import { useState } from 'react'
 import { LocationButton } from '@publiekepartner/components'
 import { Categories } from '../mockdata/Categories.ts'
-import { Box } from '@mui/material'
-
-const boxStyles = {
-  display: 'flex',
-  justifyContent: 'start',
-  alignItems: 'start',
-  gap: 4,
-}
+import { Grid } from '@mui/material'
+import { Jobs } from '../mockdata/Jobs.ts'
 
 const Index = () => {
   const [FilteredLocations, setFilteredLocations] = useState<Array<string>>([])
@@ -48,10 +42,19 @@ const Index = () => {
       }}
       title={formatMessage({ id: 'homepage.title' })}
     >
-      <Box sx={boxStyles}>
-        <CategoriesFilter categories={Categories} />
-        <LocationsFilter locations={LocationsData} handleFilter={setFilters} />
-      </Box>
+      <Grid container spacing={2}>
+        <Grid item xs={6} sm={4} md={3} lg={3}>
+          <CategoriesFilter categories={Categories} />
+        </Grid>
+        <Grid item xs={6} sm={8} md={9} lg={9}>
+          <LocationsFilter locations={LocationsData} handleFilter={setFilters} />
+        </Grid>
+        {Jobs.map((Job) => (
+          <Grid item key={Job.title} xs={12} sm={6} md={6} lg={6}>
+            <JobCard {...Job} />
+          </Grid>
+        ))}
+      </Grid>
     </BoxPage>
   )
 }

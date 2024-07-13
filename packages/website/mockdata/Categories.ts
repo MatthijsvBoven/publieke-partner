@@ -1,6 +1,6 @@
-import { CategoryProps } from '@publiekepartner/components'
+import { FilterProps } from '@publiekepartner/components'
 
-export const Categories: Array<CategoryProps> = [
+export const Categories: Array<FilterProps> = [
   { id: 1, name: 'Beleid en Bestuurlijke zaken' },
   { id: 2, name: 'Communicatie en Voorlichting' },
   { id: 3, name: 'Financiën en Economische zaken' },

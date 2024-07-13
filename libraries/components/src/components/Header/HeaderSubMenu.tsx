@@ -11,6 +11,7 @@ type HeaderSubMenuProps = {
   menuItems: Array<MenuItemProps>
   anchorElNav: HTMLElement | null
 }
+
 export const HeaderSubMenu = ({ openSubMenu, closeSubMenu, menuItems, anchorElNav }: HeaderSubMenuProps) => {
   const { formatMessage } = useIntl()
 

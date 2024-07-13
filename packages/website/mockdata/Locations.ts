@@ -1,6 +1,6 @@
-import { LocationButton } from '@publiekepartner/components'
+import { FilterProps } from '@publiekepartner/components'
 
-export const Locations: Array<LocationButton> = [
+export const Locations: Array<FilterProps> = [
   { id: 1, name: 'Drenthe' },
   { id: 2, name: 'Flevoland' },
   { id: 3, name: 'Friesland' },

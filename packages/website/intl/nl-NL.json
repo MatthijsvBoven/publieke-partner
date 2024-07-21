@@ -1,6 +1,7 @@
 {
   "filters.categories.title": "Categorieën",
   "filters.locations.title": "Provincies",
+  "filters.modal.title": "Filteren",
   "filters.show.less.button": "Bekijk minder",
   "filters.show.more.button": "Bekijk meer",
   "footer.legal.copyright": "Copyright © 2024 de Publieke Partner",
